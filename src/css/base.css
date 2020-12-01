@@ -1,0 +1,311 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+
+:root {
+	--ff-display: "Elsie", cursive;
+	--ff-sans-serif: "Source Sans Pro", sans-serif;
+
+	--line-height: 24px;
+    --font-size: 16px;
+
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #000000;
+	font-family: var(--ff-sans-serif);
+	font-weight: 400;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	color: white;
+	width: 100vw;
+    height: 100vh;
+    position: relative;
+    min-width: 1000px;
+}
+
+#bkgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+main {
+	width: 100%;
+    height: 100%;
+}
+
+.app {
+    width: 100%;
+	height: 100%;
+    padding: 2em;
+}
+
+.app h1 {
+    font-family: var(--ff-display);
+    position: absolute;
+    font-size: 1.6em;
+    width: 805px;
+    left: calc(50% - 400px);
+    top: 0;
+    text-align: center;
+}
+
+.wishCalendar {
+	padding: 0;
+    margin: auto;
+    max-width: 1000px;
+    max-height: 1000px;
+	list-style: none;
+	display: grid;
+	grid-template-rows: repeat(5, 20%);
+	grid-template-columns: repeat(5, 20%);
+	height: 100%;
+}
+
+.wishCalendarElement {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wishCalendarElement span {
+	text-align: center;
+	border-radius: 50%;
+	color: white;
+	font-family: var(--ff-display);
+	cursor: pointer;
+	background: #ffff0033;
+	animation-name: glow;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: background-image 4s ease-in-out;
+    transition: color 4s ease-in-out;
+}
+
+.wishCalendarElement span:hover {
+	background-color: #f39f86;
+	background-image: linear-gradient(315deg, #ff7b52 0%, #ffd34f 74%);
+    box-shadow: 0 0 75px 18px #f6ffa8;
+    animation-name: none;
+}
+.wishCalendarElement span:hover p {
+    color: rgb(56, 56, 56);
+}
+
+.wishCalendarElement span p {
+    margin: 0;
+    color: #ffffff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.overlay {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(82, 82, 82, 0.397);
+}
+
+.overlay .wishView {
+    position: relative;
+    max-width: 900px;
+    height: 85%;
+    max-height: 600px;
+    margin: auto;
+    margin-top: 4%;
+    animation-name: glow;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.overlay .wishView section {
+    height: 25%;
+    max-height: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 1.5em;
+    color: white;
+}
+
+.overlay .wishView section p {
+    margin: 0 ;
+    border-bottom: 2px solid white;
+}
+
+.overlay .wishView section .date {
+    font-family: var(--ff-display);
+    font-size: 2em; 
+    line-height: calc(var(--line-height) * 2);
+    min-width: 125px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 2px solid white;
+}
+
+.overlay .wishView section .text {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+.overlay .wishView section .text  h3{
+    font-family: var(--ff-display);
+    font-size: 1.1em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.overlay .wishView video , .overlay .wishView img{
+    height: 65%;
+    max-height: 400px;
+    display: block;
+    margin: auto;
+}
+.overlay .wishView img {
+    padding: 0 40px;
+}
+
+.overlay .wishView a {
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.overlay .wishView a:active, .overlay .wishView a:visited {
+    color: inherit;
+}
+
+.languageControl {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 130px;
+    height: 50px;
+}
+
+.languageControl span{
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    margin-right: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.languageControl span img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animations */
+@-webkit-keyframes glow {
+    0% {
+        box-shadow: 0 0 75px 10px;
+    }
+    12% {
+        box-shadow: 0 0 75px 15px;
+    }
+    25% {
+        box-shadow: 0 0 75px 12px ;
+    }
+    37% {
+        box-shadow: 0 0 75px 19px;
+    }
+    50% {
+        box-shadow: 0 0 75px 13px;
+    }
+    62% {
+        box-shadow: 0 0 75px 15px;
+    }
+    75% {
+        box-shadow: 0 0 75px 9px;
+    }
+    87% {
+        box-shadow: 0 0 75px 11px;
+    }
+    100% {
+        box-shadow: 0 0 75px 10px;
+    }
+}
+@-moz-keyframes glow {
+    0% {
+        box-shadow: 0 0 75px 10px;
+    }
+    12% {
+        box-shadow: 0 0 75px 15px;
+    }
+    25% {
+        box-shadow: 0 0 75px 12px ;
+    }
+    37% {
+        box-shadow: 0 0 75px 19px;
+    }
+    50% {
+        box-shadow: 0 0 75px 13px;
+    }
+    62% {
+        box-shadow: 0 0 75px 15px;
+    }
+    75% {
+        box-shadow: 0 0 75px 9px;
+    }
+    87% {
+        box-shadow: 0 0 75px 11px;
+    }
+    100% {
+        box-shadow: 0 0 75px 10px;
+    }
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 75px 10px;
+    }
+    12% {
+        box-shadow: 0 0 75px 15px;
+    }
+    25% {
+        box-shadow: 0 0 75px 12px ;
+    }
+    37% {
+        box-shadow: 0 0 75px 19px;
+    }
+    50% {
+        box-shadow: 0 0 75px 13px;
+    }
+    62% {
+        box-shadow: 0 0 75px 15px;
+    }
+    75% {
+        box-shadow: 0 0 75px 9px;
+    }
+    87% {
+        box-shadow: 0 0 75px 11px;
+    }
+    100% {
+        box-shadow: 0 0 75px 10px;
+    }
+}
