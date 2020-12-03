@@ -53,7 +53,7 @@ export function getWishes(): { en: IWish[]; bg: IWish[] } {
 		},
 		{
 			titleEN: "The Helix Nebula",
-			textEN: "The Helix Nebula is one of the closest nebulae to Earth. It's as much as 655 light years away from us, yet human technology has made it possible to for us to see.",
+			textEN: "The Helix Nebula is one of the closest nebulae to Earth. It's as much as 655 light years away from us, yet human technology has made it possible for us to see.",
 			titleBG: "Helix Nebula",
 			textBG: "Helix Nebula е космически облак от прах и ионизирани газове. Тя се намира на 655 светлинни години от нас и все пак можем да я видим благодарение на човешките изобретения.",
 			mediaType: <"image" | "video">"image",

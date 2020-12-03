@@ -61,7 +61,6 @@ export function createState(inParentComponent: React.ReactNode) {
 
 		setLang: function (inLang: "en" | "bg") {
 			this.setState((state: any) => {
-				console.log(state.headlines[<"en" | "bg">inLang]);
 				return {
 					lang: inLang,
 					wishes: state.wishesObject[<"en" | "bg">inLang],
