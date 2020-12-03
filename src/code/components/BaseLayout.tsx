@@ -19,11 +19,6 @@ class BaseLayout extends React.Component {
         return (
             <div className="app">
                 <h1>{this.state.headline}</h1>
-                <video autoPlay muted loop id="bkgVideo">
-                    <source src={bkgVideo} type="video/mp4" />
-                </video>
-                <WishCalendar wishes={this.state.wishes} elementOnClick={this.state.selectWish} />
-                <WishView selectedWish={this.state.selectedWish} returnToCalendar={this.state.selectWish} />
                 <div className="languageControl">
                     <span onClick={() => this.state.setLang("en")}>
                         <img src={enFlag} alt="English"/>
@@ -32,6 +27,11 @@ class BaseLayout extends React.Component {
                         <img src={bgFlag} alt="Bulgarian"/>
                     </span>
                 </div>
+                <WishCalendar wishes={this.state.wishes} elementOnClick={this.state.selectWish} />
+                <WishView selectedWish={this.state.selectedWish} returnToCalendar={this.state.selectWish} />
+                <video autoPlay muted loop id="bkgVideo">
+                    <source src={bkgVideo} type="video/mp4" />
+                </video>
             </div>
         );
     }
