@@ -77,7 +77,7 @@ export function getWishes(): { en: IWish[]; bg: IWish[] } {
 		},
 		{
 			titleEN: "Fossils",
-			textEN: "Perserved through time, fossils give as the unique opportunity to look back through time and see all the amazing life forms that used to walk on Earth.",
+			textEN: "Perserved through time, fossils give us the unique opportunity to look back through time and see all the amazing life forms that used to walk on Earth.",
 			titleBG: "Фосили",
 			textBG: "Запазени през времето, фосилите ни дават уникалната възможност да погледнем назад през времето към невероятните форми на живот, които населявали Земята.",
 			mediaType: <"image" | "video">"image",
